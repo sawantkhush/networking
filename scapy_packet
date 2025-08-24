@@ -1,0 +1,7 @@
+from scapy.all import *
+target_ip = "127.0.0.1"
+custom_payload = "Hello,ICMP"
+ip_layer = IP(dst=target_ip)
+icmp_layer = ICMP(type = 8)
+packet = ip_layer/icmp_layer/custom_payload
+send(packet)
